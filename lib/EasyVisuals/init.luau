@@ -162,11 +162,9 @@ function Effect.SetCustomFolders(customPresets: Folder?, customTemplates: Folder
 	MergedPresets = nil;
 	MergedTemplates = nil;
 
-	-- Reload templates in the Effect module
 	Effect.Templates = _getMergedTemplates();
 end
 
--- Initialize templates
 Effect.Templates = _getMergedTemplates();
 
 function Effect.new<T...>(uiInstance: GuiObject, effectType: string, speed: number?, size: number?, saveInstanceObjects: boolean?, customColor: ColorSequence | Color3?, customTransparency: NumberSequence | number?, resumesOnVisible: boolean?, useScaledSize: boolean?): Effect<T...>
@@ -310,4 +308,4 @@ function Effect:Destroy()
 	self.Connection:Disconnect();
 end
 
-return table.freeze(Effect);
+return Effect;
